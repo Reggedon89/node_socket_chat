@@ -1,4 +1,10 @@
-var express = require("express");
-var app = express();
+const http = require("http");
+let express = require("express");
+let app = express();
+const hostname = "127.0.0.1";
+const port = 3000;
+app.use(express.static(__dirname));
 
-app.listen(3000);
+let server = app.listen(3000, () => {
+  console.log("server is listening to ", server.address().port);
+});
